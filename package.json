@@ -1,6 +1,6 @@
 {
   "name": "jwt-auth-parse",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,12 @@
   "bugs": {
     "url": "https://github.com/allbarbos/jwt-auth-parse/issues"
   },
+  "keywords": [
+    "jwt",
+    "jsonwebtoken",
+    "header",
+    "parse"
+  ],
   "homepage": "https://github.com/allbarbos/jwt-auth-parse#readme",
   "dependencies": {
     "jsonwebtoken": "8.5.1"

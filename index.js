@@ -1,26 +1,28 @@
 const jwt = require("jsonwebtoken");
 
-const authorization = (secretOrPublicKey, req, res, next) => {
-  const auth = req.headers.authorization;
+const authorization = secretOrPublicKey => {
+  return (req, res, next) => {
+    const auth = req.headers.authorization;
 
-  if (!auth) return res.status(401).send({ error: "No token provided" });
+    if (!auth) return res.status(401).send({ error: "No token provided" });
 
-  const parts = auth.split(" ");
+    const parts = auth.split(" ");
 
-  if (!parts.length === 2)
-    return res.status(401).send({ error: "Token error" });
+    if (!parts.length === 2)
+      return res.status(401).send({ error: "Token error" });
 
-  const [scheme, token] = parts;
+    const [scheme, token] = parts;
 
-  if (!/^Bearer$/i.test(scheme)) {
-    return res.status(401).send({ error: "Token malformatted" });
-  }
+    if (!/^Bearer$/i.test(scheme)) {
+      return res.status(401).send({ error: "Token malformatted" });
+    }
 
-  jwt.verify(token, secretOrPublicKey, (err, decoded) => {
-    if (err) return res.status(401).send({ error: "Token invalid" });
+    jwt.verify(token, secretOrPublicKey, (err, decoded) => {
+      if (err) return res.status(401).send({ error: "Token invalid" });
 
-    return next();
-  });
+      return next();
+    });
+  };
 };
 
 module.exports = authorization;
