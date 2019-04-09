@@ -1,6 +1,6 @@
 {
-  "name": "jwt-auth-parse",
-  "version": "0.0.5",
+  "name": "jwt-token-parse",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allbarbos/jwt-auth-parse.git"
+    "url": "git+https://github.com/allbarbos/jwt-token-parse.git"
   },
   "author": "allbarbos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/allbarbos/jwt-auth-parse/issues"
+    "url": "https://github.com/allbarbos/jwt-token-parse/issues"
   },
   "keywords": [
     "jwt",
@@ -21,7 +21,7 @@
     "header",
     "parse"
   ],
-  "homepage": "https://github.com/allbarbos/jwt-auth-parse#readme",
+  "homepage": "https://github.com/allbarbos/jwt-token-parse#readme",
   "dependencies": {
     "jsonwebtoken": "8.5.1"
   }
