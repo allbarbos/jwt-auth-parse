@@ -18,8 +18,11 @@ const authorization = secretOrPublicKey => (req, res, next) => {
 
   if (!/^Bearer$/i.test(scheme)) return statusCode('Token malformatted')
 
-  const teste = jwt.verify(token, secretOrPublicKey)
-  console.log(teste)
+  jwt.verify(token, secretOrPublicKey, (err, decoded) => {
+    if (err) return statusCode(`Token invalid: ${err.message}`)
+
+    return next()
+  })
 }
 
 module.exports = authorization
